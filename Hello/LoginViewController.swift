@@ -21,7 +21,7 @@ class LoginViewController: UIViewController{
         [emailButton,googleButton,appleButton].forEach
         {
             $0?.layer.borderWidth = 1
-            $0?.layer.backgroundColor = UIColor.orange.cgColor
+            $0?.layer.backgroundColor = UIColor.yellow.cgColor
             $0?.layer.cornerRadius = 10
         }
     }
