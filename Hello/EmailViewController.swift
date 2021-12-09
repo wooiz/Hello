@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class EmailViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
@@ -15,7 +17,7 @@ class EmailViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        //navigation bar 보이기
         navigationController?.navigationBar.isHidden = false
         
         loginButton.layer.cornerRadius = 10
@@ -30,9 +32,29 @@ class EmailViewController: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        //firebase 이메일 비밀번호인증
+        let email = emailText.text ?? ""
+        let password = passwordText.text ?? ""
         
+        
+        //신규 사용자 생성
+        Auth.auth().createUser(withEmail: email, password: password){
+            [weak self] authResult, error in
+            guard let self = self else {return}
+            
+            self.showMainViewController()
+            
+        }
         
     }
+    
+    private func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        navigationController?.show(mainViewController, sender: nil)
+    }
+    
     
     
     
