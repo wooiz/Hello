@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 
 class MainViewController : UIViewController{
@@ -24,6 +24,13 @@ class MainViewController : UIViewController{
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+        
+        let email = Auth.auth().currentUser?.email ?? "고객"
+        
+        hiLabel.text = """
+       환영합니다
+       \(email)님
+       """
     }
     
     
