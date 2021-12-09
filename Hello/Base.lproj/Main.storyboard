@@ -190,7 +190,7 @@
         <!--Main View Controller-->
         <scene sceneID="erI-T7-Ocz">
             <objects>
-                <viewController id="N20-vk-1RK" customClass="MainViewController" customModule="Hello" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="N20-vk-1RK" customClass="MainViewController" customModule="Hello" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IdC-No-z2l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
