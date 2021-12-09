@@ -23,6 +23,7 @@ class LoginViewController: UIViewController{
             $0?.layer.borderWidth = 1
             $0?.layer.backgroundColor = UIColor.orange.cgColor
             $0?.layer.cornerRadius = 10
+            $0?.layer.borderColor = UIColor.white.cgColor
         }
     }
     
