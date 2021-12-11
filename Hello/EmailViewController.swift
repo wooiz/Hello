@@ -42,7 +42,20 @@ class EmailViewController: UIViewController {
             [weak self] authResult, error in
             guard let self = self else {return}
             
-            self.showMainViewController()
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007: //이미 가입한 계정일때
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.errorMessage.text = error.localizedDescription
+                }
+            }
+            
+            else{
+                self.showMainViewController()
+            }
+            
             
         }
         
@@ -53,6 +66,20 @@ class EmailViewController: UIViewController {
         let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
         mainViewController.modalPresentationStyle = .fullScreen
         navigationController?.show(mainViewController, sender: nil)
+    }
+    
+    private func loginUser(withEmail email: String , password: String){
+        Auth.auth().signIn(withEmail: email, password: password){
+            [weak self]_, error in
+            guard let self = self else {return}
+            
+            if let error = error{
+                self.errorMessage.text = error.localizedDescription
+            }
+            else{
+                self.showMainViewController()
+            }
+        }
     }
     
     

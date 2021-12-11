@@ -8,5 +8,6 @@ target 'Hello' do
   # Pods for Hello
 
    pod 'Firebase/Auth'
-
+   
+   pod 'GoogleSignIn' , '6.0.0'
 end
