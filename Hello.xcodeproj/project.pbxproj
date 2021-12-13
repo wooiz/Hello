@@ -10,6 +10,7 @@
 		4388493027625FB400876856 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388492F27625FB400876856 /* EmailViewController.swift */; };
 		43884932276269E400876856 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43884931276269E400876856 /* MainViewController.swift */; };
 		43884934276270B400876856 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43884933276270B400876856 /* GoogleService-Info.plist */; };
+		43B516E82766719000D4699E /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B516E72766719000D4699E /* NewViewController.swift */; };
 		43E334F5276139A20009F709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E334F4276139A20009F709 /* AppDelegate.swift */; };
 		43E334F7276139A20009F709 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E334F6276139A20009F709 /* SceneDelegate.swift */; };
 		43E334FC276139A20009F709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E334FA276139A20009F709 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		4388492F27625FB400876856 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		43884931276269E400876856 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		43884933276270B400876856 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43B516E72766719000D4699E /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		43E334F1276139A20009F709 /* Hello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E334F4276139A20009F709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E334F6276139A20009F709 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				43E3350827613B8E0009F709 /* LoginViewController.swift */,
 				4388492F27625FB400876856 /* EmailViewController.swift */,
 				43884931276269E400876856 /* MainViewController.swift */,
+				43B516E72766719000D4699E /* NewViewController.swift */,
 			);
 			path = Hello;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				43E3350927613B8E0009F709 /* LoginViewController.swift in Sources */,
 				43E334F5276139A20009F709 /* AppDelegate.swift in Sources */,
 				43E334F7276139A20009F709 /* SceneDelegate.swift in Sources */,
+				43B516E82766719000D4699E /* NewViewController.swift in Sources */,
 				4388493027625FB400876856 /* EmailViewController.swift in Sources */,
 				43884932276269E400876856 /* MainViewController.swift in Sources */,
 			);
