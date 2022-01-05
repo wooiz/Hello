@@ -55,7 +55,7 @@ class EmailViewController: UIViewController {
                 self.errorMessage.text = error.localizedDescription
             }
             else{
-                self.showMainViewController()
+            
             }
         }
         

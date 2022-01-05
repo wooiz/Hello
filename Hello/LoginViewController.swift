@@ -8,12 +8,15 @@
 import UIKit
 import GoogleSignIn
 import Firebase
+import Lottie
+
 
 class LoginViewController: UIViewController{
     
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var appleButton: UIButton!
+    @IBOutlet weak var LoginAnimationView: AnimationView!
     
     @IBAction func googleLoginButtonTapped(_ sender: UIButton) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -48,7 +51,23 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        [emailButton,googleButton,appleButton].forEach
+        
+        
+//        let animationView = AnimationView(name: "money")
+//        lottieView.contentMode = .scaleAspectFit
+//        lottieView.addSubview(animationView)
+//        animationView.frame = lottieView.bounds
+//        animationView.loopMode = .loop
+//        animationView.play()
+        
+        let animationview = AnimationView(name: "exercise")
+        LoginAnimationView.contentMode = .scaleToFill
+        LoginAnimationView.addSubview(animationview)
+        animationview.frame = LoginAnimationView.bounds
+        animationview.loopMode = .loop
+        animationview.play()
+        
+        [emailButton,googleButton].forEach
         {
             $0?.layer.borderWidth = 1
             $0?.layer.backgroundColor = UIColor.orange.cgColor

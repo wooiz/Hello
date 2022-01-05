@@ -8,11 +8,14 @@
 import UIKit
 import FirebaseAuth
 
+
+
 class NewViewController: UIViewController{
-    
+
     
     @IBOutlet weak var newLoginButton: UIButton!
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
@@ -25,6 +28,7 @@ class NewViewController: UIViewController{
         newLoginButton.layer.shadowOpacity = 0.4
         newLoginButton.layer.shadowOffset = CGSize(width: 0, height: 3)
         
+       
     }
     
     
@@ -32,25 +36,29 @@ class NewViewController: UIViewController{
         
         let email = emailText.text ?? ""
         let password = passwordText.text ?? ""
+  
+        
+
         
         
         //신규 사용자 생성
         Auth.auth().createUser(withEmail: email, password: password){
             [weak self] authResult, error in
             guard let self = self else {return}
-            
+           
+                        
             if let error = error {
                 let code = (error as NSError).code
                 switch code {
                 case 17007: //이미 가입한 계정일때
-                    self.loginUser(withEmail: email, password: password)
+                    self.showEmailViewController()
                 default:
                     self.errorMessage.text = error.localizedDescription
                 }
             }
             
             else{
-                self.showMainViewController()
+                self.showEmailViewController()
             }
             
             
@@ -67,13 +75,13 @@ class NewViewController: UIViewController{
                 self.errorMessage.text = error.localizedDescription
             }
             else{
-                self.showMainViewController()
+                self.showEmailViewController()
             }
         }
     }
-    private func showMainViewController() {
+    private func showEmailViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
+        let mainViewController = storyboard.instantiateViewController(identifier: "EmailViewController")
         mainViewController.modalPresentationStyle = .fullScreen
         navigationController?.show(mainViewController, sender: nil)
     }

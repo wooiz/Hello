@@ -10,4 +10,13 @@ target 'Hello' do
    pod 'Firebase/Auth'
    
    pod 'GoogleSignIn' , '6.0.0'
+
+   pod 'Kingfisher'
+
+   pod 'lottie-ios'
+
+   pod 'Firebase/Database'
+
+   pod 'Firebase/Firestore'
+
 end
